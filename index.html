@@ -1,0 +1,1037 @@
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiệm Nhà Bông - Bảng Giá Tài Khoản Premium</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .topbar {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+    .topbar .group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: #dc2626;
+      letter-spacing: 0.3px;
+    }
+    .logo span { color: #2563eb; }
+    .search {
+      flex: 1;
+      max-width: 720px;
+      min-width: 260px;
+      display: flex;
+      gap: 10px;
+    }
+    .search input {
+      flex: 1;
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 13px 16px;
+      font-size: 15px;
+      background: #fff;
+      outline: none;
+    }
+    .btn,
+    .search button {
+      border: none;
+      border-radius: 14px;
+      padding: 13px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .btn-primary,
+    .search button {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff;
+    }
+    .btn-dark {
+      background: #0f172a;
+      color: #fff;
+    }
+    .btn-soft {
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+    .btn:hover,
+    .search button:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .pill {
+      background: #f1f5f9;
+      color: #334155;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 0 24px 16px;
+    }
+    .nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .nav a {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      color: #334155;
+    }
+    .nav a:hover,
+    .nav a.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    .hero {
+      margin: 24px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 55%, #06b6d4 100%);
+      color: white;
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 24px;
+      padding: 36px;
+      box-shadow: 0 25px 70px rgba(37, 99, 235, 0.22);
+    }
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: 42px;
+      line-height: 1.18;
+    }
+    .hero p {
+      margin: 0 0 22px;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 22px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      align-self: stretch;
+    }
+    .hero-card h3 { margin-top: 0; font-size: 22px; }
+
+    .container { padding: 0 24px 36px; }
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 30px 0 18px;
+    }
+    .section-title h2 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .muted { color: #64748b; }
+
+    .grid { display: grid; gap: 18px; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 15px 40px rgba(15, 23, 42, 0.06);
+    }
+    .category-card,
+    .account-card,
+    .combo-card,
+    .benefit-card,
+    .review-card,
+    .faq-item {
+      transition: 0.22s ease;
+    }
+    .category-card:hover,
+    .account-card:hover,
+    .combo-card:hover,
+    .benefit-card:hover,
+    .review-card:hover,
+    .faq-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
+    }
+
+    .icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .badge-hot {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .badge-new {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .price {
+      font-size: 34px;
+      font-weight: 800;
+      margin: 12px 0;
+      color: #0f172a;
+    }
+    .price small {
+      font-size: 14px;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .old-price {
+      color: #94a3b8;
+      text-decoration: line-through;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .features {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .features li {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 11px 13px;
+      font-size: 14px;
+      color: #334155;
+    }
+
+    .account-card.highlight {
+      border: 2px solid #2563eb;
+      position: relative;
+      overflow: hidden;
+    }
+    .account-card.highlight::after {
+      content: 'Bán chạy';
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: linear-gradient(135deg, #2563eb, #06b6d4);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 7px 11px;
+      border-radius: 999px;
+    }
+
+    .category-row {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .compare-box {
+      overflow-x: auto;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      background: white;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 840px;
+    }
+    th, td {
+      padding: 16px;
+      border-bottom: 1px solid #e2e8f0;
+      text-align: left;
+      font-size: 14px;
+    }
+    th {
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-weight: 800;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .stat-box {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 12px 30px rgba(15,23,42,0.05);
+    }
+    .stat-box h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: #475569;
+    }
+    .stat-box .number {
+      font-size: 32px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .review-card p,
+    .benefit-card p,
+    .category-card p,
+    .combo-card p,
+    .faq-item p {
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .cta {
+      margin-top: 30px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: white;
+      border-radius: 28px;
+      padding: 32px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .cta h2 {
+      margin: 0 0 10px;
+      font-size: 32px;
+    }
+    .cta p {
+      margin: 0;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.7;
+    }
+
+    .footer {
+      background: #020617;
+      color: #cbd5e1;
+      margin-top: 36px;
+      padding: 40px 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .footer h4 {
+      color: #fff;
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+    .footer p { line-height: 1.8; margin: 6px 0; }
+
+    .hidden-by-search {
+      display: none !important;
+    }
+    .search-empty {
+      text-align: center;
+      padding: 28px 18px;
+      border: 1px dashed #cbd5e1;
+      border-radius: 20px;
+      background: #fff;
+      color: #64748b;
+      margin-top: 18px;
+    }
+    .search-empty strong {
+      color: #0f172a;
+    }
+    .search-highlight {
+      border: 2px solid #2563eb !important;
+      box-shadow: 0 20px 45px rgba(37, 99, 235, 0.18) !important;
+      transform: translateY(-4px);
+    }
+
+    @media (max-width: 1200px) {
+      .category-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .grid-4, .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 780px) {
+      .grid-2, .grid-3, .grid-4, .stats, .category-row, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .header { align-items: stretch; }
+      .header-actions { width: 100%; }
+      .pill { flex: 1; text-align: center; }
+      .hero { margin: 16px; padding: 24px; }
+      .hero h1 { font-size: 30px; }
+      .container { padding: 0 16px 28px; }
+      .nav, .header, .topbar, .footer { padding-left: 16px; padding-right: 16px; }
+      .cta h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="group">
+      <span>Chính sách bảo hành</span>
+      <span>FAQ</span>
+      <span>Liên hệ</span>
+      <span>Hỗ trợ 24/7</span>
+    </div>
+    <div class="group">
+      <span>Ngôn ngữ: VI</span>
+      <span>Tiền tệ: VND</span>
+      <span>Hotline: 0123 456 789</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="logo">TIEM<span> NHA BONG</span></div>
+    <div class="search">
+      <input id="searchInput" type="text" placeholder="Tìm Netflix, Spotify, YouTube Premium, Canva, ChatGPT, CapCut..." />
+      <button id="searchButton" type="button">Tìm kiếm</button>
+    </div>
+    <div class="header-actions">
+      <div class="pill">Yêu thích</div>
+      <div class="pill">Giỏ hàng</div>
+      <div class="pill">Hỗ trợ</div>
+      <div class="pill">Đăng nhập</div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <ul>
+      <li><a class="active" href="#">Trang chủ</a></li>
+      <li><a href="#categories">Danh mục</a></li>
+      <li><a href="#pricing">Bảng giá</a></li>
+      <li><a href="#combo">Combo hot</a></li>
+      <li><a href="#compare">So sánh</a></li>
+      <li><a href="#reviews">Đánh giá</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>Bảng giá các loại tài khoản premium </h1>
+      <p>
+        Chuyên các loại tài khoản premium phổ biến như Meitu ,Xingtu , Hypic, Netflix, Spotify, YouTube Premium, Canva Pro, ChatGPT Plus,
+        Adobe, CapCut Pro, Duolingo, Microsoft 365 và nhiều dịch vụ số khác. 
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary">Xem bảng giá</button>
+        <button class="btn btn-dark">Xem combo tiết kiệm</button>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Lý do khách chọn Tiệm Nhà Bông</h3>
+      <ul class="features">
+        <li>Tài khoản ổn định, dễ dùng, hỗ trợ nhanh</li>
+        <li>Giao tài khoản nhanh gọn lẹ </li>
+        <li>Nhiều mốc thời hạn: 1 tháng, 3 tháng, 6 tháng, 12 tháng</li>
+        <li>Có combo tiết kiệm cho người dùng đa nền tảng</li>
+        <li>Thiết kế rõ sản phẩm, dễ so sánh và chốt đơn</li>
+      </ul>
+    </div>
+  </section>
+
+  <main class="container">
+    <section>
+      <div class="stats">
+        <div class="stat-box">
+          <h3>Sản phẩm premium</h3>
+          <div class="number">120+</div>
+          <p class="muted">Đa dạng dịch vụ số phổ biến</p>
+        </div>
+        <div class="stat-box">
+          <h3>Đơn hoàn tất</h3>
+          <div class="number">8.5K</div>
+          <p class="muted">Tăng độ tin cậy khi mua</p>
+        </div>
+        <div class="stat-box">
+          <h3>Khách quay lại</h3>
+          <div class="number">92%</div>
+          <p class="muted">Tỉ lệ giữ chân cao</p>
+        </div>
+        <div class="stat-box">
+          <h3>Hỗ trợ phản hồi</h3>
+          <div class="number">24/7</div>
+          <p class="muted">Nhanh, rõ, đúng vấn đề</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="categories">
+      <div class="section-title">
+        <h2>Danh mục tài khoản premium</h2>
+        <span class="muted">Thiết kế dạng card bo góc, hiện đại, dễ nhìn</span>
+      </div>
+      <div class="category-row">
+        <div class="card category-card searchable-item" data-search="giai tri netflix youtube disney fpt play vieon hbo max danh muc">
+          <div class="icon-box">🎬</div>
+          <h3>Giải trí</h3>
+          <p class="muted">Netflix, Youtube , Disney+, FPT Play, VieON, HBO Max...</p>
+        </div>
+        <div class="card category-card searchable-item" data-search="am nhac spotify youtube music apple music danh muc">
+          <div class="icon-box">🎵</div>
+          <h3>Âm nhạc</h3>
+          <p class="muted">Spotify Premium, YouTube Music, Apple Music...</p>
+        </div>
+        <div class="card category-card searchable-item" data-search="lam viec microsoft 365 notion ai grammarly zoom pro danh muc">
+          <div class="icon-box">💼</div>
+          <h3>Làm việc</h3>
+          <p class="muted">Microsoft 365, Notion AI, Grammarly, Zoom Pro...</p>
+        </div>
+        <div class="card category-card searchable-item" data-search="thiet ke canva adobe envato danh muc">
+          <div class="icon-box">🎨</div>
+          <h3>Thiết kế</h3>
+          <p class="muted">Canva Pro, Adobe CC, Envato Elements...</p>
+        </div>
+        <div class="card category-card searchable-item" data-search="ai tools chatgpt claude midjourney elevenlabs danh muc">
+          <div class="icon-box">🤖</div>
+          <h3>AI Tools</h3>
+          <p class="muted">ChatGPT Plus, Claude, Midjourney, ElevenLabs...</p>
+        </div>
+        <div class="card category-card searchable-item" data-search="hoc tap duolingo coursera udemy quizlet danh muc">
+          <div class="icon-box">📚</div>
+          <h3>Học tập</h3>
+          <p class="muted">Duolingo, Coursera, Udemy, Quizlet Plus...</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="section-title">
+        <h2>Bảng giá tài khoản nổi bật</h2>
+        <span class="muted">Phần trọng tâm để bán hàng rõ sản phẩm</span>
+      </div>
+      <div class="grid grid-3">
+        <div class="card account-card searchable-item" data-search="meitu vip meitu vip+ app chinh anh video all in one">
+          <span class="badge badge-hot">Hot</span>
+          <h3>Meitu VIP+</h3>
+          <p class="muted">App “all-in-one”, dùng được cho cả ảnh lẫn video.</p>
+          <div class="old-price">400.000đ</div>
+          <div class="price">70.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Chỉnh ảnh + video đa năng</li>
+            <li>Makeup tự động, chỉnh body</li>
+            <li>AI vẽ lại ảnh, ghép ảnh, filter đẹp</li>
+            <li> Kho hiệu ứng cực nhiều</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+
+        <div class="card account-card highlight searchable-item" data-search="wink vip wink vip+ edit video ai lam net xoa vat the">
+          <span class="badge">Phổ biến</span>
+          <h3>Wink Vip+</h3>
+          <p class="muted">Hợp bạn quay video nhiều, cần edit xịn hơn.</p>
+          <div class="old-price">520.000đ</div>
+          <div class="price">150.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Full tính năng VIP + nâng cấp AI</li>
+            <li>Làm nét video mờ → rõ</li>
+            <li>Xóa vật thể, chỉnh body trong video</li>
+            <li>Hiệu ứng nâng cao, edit chuyên nghiệp hơn</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+
+        <div class="card account-card searchable-item" data-search="hypic app anh story feed han chill nghe">
+          <span class="badge badge-new">Mới</span>
+          <h3>Hypic</h3>
+          <p class="muted">Hợp làm ảnh story, feed kiểu Hàn – chill – nghệ.</p>
+          <div class="old-price">250.000đ</div>
+          <div class="price">75.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Chỉnh ảnh style aesthetic</li>
+            <li>Thêm chữ, sticker, layout story</li>
+            <li>Blend màu nhẹ, hợp đăng IG/TikTok</li>
+            <li>Bảo hành đầy đủ xuyên suốt</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+
+        <div class="card account-card searchable-item" data-search="xinghui ai ghep mat trend tiktok trung co trang idol">
+          <span class="badge badge-new">Mới</span>
+          <h3>XINGHUI</h3>
+          <p class="muted">Hợp bạn thích ảnh “biến hình”, sống ảo nhanh, bắt trend TikTok.</p>
+          <div class="old-price">389.000đ</div>
+          <div class="price">155.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Tạo ảnh AI, ghép mặt nhanh</li>
+            <li>Nhiều style hot trend Trung (cổ trang, idol, hiện đại)</li>
+            <li> Có sẵn template, chỉ cần up ảnh là có ảnh đẹp</li>
+            <li>Bảo hành full time</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+
+        <div class="card account-card searchable-item" data-search="xingtu xing tu chinh anh studio da body makeup">
+          <span class="badge badge-new">Mới</span>
+          <h3>XingTu</h3>
+          <p class="muted">Phù hợp chỉnh ảnh kỹ, muốn ảnh đẹp như studio.</p>
+          <div class="old-price">289.000đ</div>
+          <div class="price">85.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Chỉnh ảnh chuyên sâu (da, body, makeup)</li>
+            <li>Xóa vật thể, chỉnh chi tiết cực nét</li>
+            <li>Preset màu xịn, ảnh tự nhiên, sắc nét</li>
+            <li>Bảo hành full time</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+
+        <div class="card account-card searchable-item" data-search="youtube premium youtube khong quang cao phat nen tai video">
+          <span class="badge badge-new">Mới</span>
+          <h3>YouTube Premium</h3>
+          <p class="muted">Xem YouTube không quảng cáo, phát nền, tải video.</p>
+          <div class="old-price">89.000đ</div>
+          <div class="price">55.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Không quảng cáo</li>
+            <li>Nghe nhạc khi tắt màn hình</li>
+            <li>Hỗ trợ đa thiết bị</li>
+            <li>Phù hợp học tập và giải trí</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+
+        <div class="card account-card searchable-item" data-search="canva pro thiet ke banner post social template">
+          <span class="badge">Thiết kế</span>
+          <h3>Canva Pro</h3>
+          <p class="muted">Kho template lớn, xóa nền, resize, brand kit.</p>
+          <div class="old-price">129.000đ</div>
+          <div class="price">35.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Dùng cho thiết kế social, banner, post</li>
+            <li>Xuất file chất lượng cao</li>
+            <li>Kho tài nguyên premium</li>
+            <li>Phù hợp creator và seller</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+
+        <div class="card account-card searchable-item" data-search="chatgpt plus ai hoc tap cong viec viet noi dung">
+          <span class="badge badge-hot">AI</span>
+          <h3>ChatGPT Plus</h3>
+          <p class="muted">Hỗ trợ học tập, viết nội dung, nghiên cứu và làm việc nhanh hơn.</p>
+          <div class="old-price">700.000đ</div>
+          <div class="price">250.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Tốc độ phản hồi tốt</li>
+            <li>Dùng cho học tập và công việc</li>
+            <li>Hỗ trợ người sáng tạo nội dung</li>
+            <li>Nâng chính chủ</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+
+        <div class="card account-card searchable-item" data-search="capcut pro video tiktok reels shorts">
+          <span class="badge">Video</span>
+          <h3>CapCut Pro</h3>
+          <p class="muted">Mở khóa hiệu ứng, template và công cụ chỉnh sửa nâng cao.</p>
+          <div class="old-price">149.000đ</div>
+          <div class="price">49.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Hiệu ứng và template premium</li>
+            <li>Phù hợp TikTok, Reels, Shorts</li>
+            <li>Hỗ trợ creator bán hàng</li>
+            <li>Dễ dùng trên mobile và desktop</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+      </div>
+      <div id="searchEmptyState" class="search-empty" style="display:none;">
+        Không tìm thấy sản phẩm phù hợp với từ khóa <strong id="searchKeyword"></strong>.
+      </div>
+    </section>
+
+    
+
+    <section id="compare">
+      <div class="section-title">
+        <h2>Bảng so sánh nhanh</h2>
+        <span class="muted">Giúp khách dễ chọn đúng gói</span>
+      </div>
+      <div class="compare-box">
+        <table>
+          <thead>
+            <tr>
+              <th>Sản phẩm</th>
+              <th>Thời hạn</th>
+              <th>Loại sử dụng</th>
+              <th>Bảo hành</th>
+              <th>Giá bán</th>
+              <th>Phù hợp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="searchable-item" data-search="netflix premium profile rieng xem phim giai tri">
+              <td>Netflix Premium</td>
+              <td>1 tháng</td>
+              <td>Profile riêng</td>
+              <td>Theo thời hạn</td>
+              <td>119.000đ</td>
+              <td>Xem phim, giải trí</td>
+            </tr>
+            <tr class="searchable-item" data-search="spotify premium nghe nhac hang ngay tai khoan rieng">
+              <td>Spotify Premium</td>
+              <td>4 tháng</td>
+              <td>Tài khoản riêng</td>
+              <td>Theo thời hạn</td>
+              <td>239.000đ</td>
+              <td>Nghe nhạc hằng ngày</td>
+            </tr>
+            <tr class="searchable-item" data-search="canva pro thiet ke ban hang join team account">
+              <td>Canva Pro</td>
+              <td>1 tháng</td>
+              <td>Join team / account</td>
+              <td>Theo thời hạn</td>
+              <td>35.000đ</td>
+              <td>Thiết kế bán hàng</td>
+            </tr>
+            <tr class="searchable-item" data-search="chatgpt plus ai hoc tap cong viec acc cap">
+              <td>ChatGPT Plus</td>
+              <td>1 tháng</td>
+              <td>Acc Cấp</td>
+              <td>Theo gói</td>
+              <td>174.000đ</td>
+              <td>AI học tập / công việc</td>
+            </tr>
+            <tr class="searchable-item" data-search="capcut pro dung video ngan account premium">
+              <td>CapCut Pro</td>
+              <td>1 tháng</td>
+              <td>Account premium</td>
+              <td>Theo thời hạn</td>
+              <td>49.000đ</td>
+              <td>Dựng video ngắn</td>
+            </tr>
+            <tr class="searchable-item" data-search="Gemini pro">
+              <td>Gemini pro</td>
+              <td>1 Năm</td>
+              <td>Nâng Chính Chủ</td>
+              <td>Theo thời hạn</td>
+              <td>349.000đ</td>
+              <td>Thiết kế </td>
+            </tr>
+            <tr class="searchable-item" data-search="adobe full app">
+              <td>Adobe Full APP</td>
+              <td>1 Tháng</td>
+              <td>Nâng Chính Chủ</td>
+              <td>Theo thời hạn</td>
+              <td>169.000đ</td>
+              <td>Thiết kế </td>
+            </tr>
+            <tr class="searchable-item" data-search="canva">
+              <td>Full Con Canva Pro </td>
+              <td>1 Tháng</td>
+              <td>Có thể mời được thêm 100 slot</td>
+              <td>Theo thời hạn</td>
+              <td>129.000đ</td>
+              <td>Thiết kế </td>
+            </tr>
+            <tr class="searchable-item" data-search="canva">
+              <td>Canva PRO </td>
+              <td>1 Năm</td>
+              <td>Nâng Chính Chủ</td>
+              <td>Theo thời hạn</td>
+              <td>199.000đ</td>
+              <td>Thiết kế </td>
+            </tr>
+            <tr class="searchable-item" data-search="grok">
+              <td>Grok Super </td>
+              <td>1 Tháng</td>
+              <td>Nâng Chính Chủ</td>
+              <td>Theo thời hạn</td>
+              <td>215.000đ</td>
+              <td>Thiết kế </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Vì sao nên mua tại đây</h2>
+        <span class="muted">Khối tăng độ tin cậy bán hàng</span>
+      </div>
+      <div class="grid grid-4">
+        <div class="card benefit-card">
+          <div class="icon-box">⚡</div>
+          <h3>Giao nhanh</h3>
+          <p class="muted">Xử lý đơn nhanh, giảm thời gian chờ của khách.</p>
+        </div>
+        <div class="card benefit-card">
+          <div class="icon-box">🛡️</div>
+          <h3>Bảo hành rõ ràng</h3>
+          <p class="muted">Chính sách minh bạch theo từng loại sản phẩm.</p>
+        </div>
+        <div class="card benefit-card">
+          <div class="icon-box">💬</div>
+          <h3>Hỗ trợ tận tâm</h3>
+          <p class="muted">Có người hỗ trợ khi gặp lỗi kích hoạt hoặc đăng nhập.</p>
+        </div>
+        <div class="card benefit-card">
+          <div class="icon-box">💸</div>
+          <h3>Giá cạnh tranh</h3>
+          <p class="muted">Nhiều mốc giá và combo để khách dễ chọn hơn.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="section-title">
+        <h2>Đánh giá khách hàng</h2>
+        <span class="muted">Tăng uy tín và tỉ lệ chốt đơn</span>
+      </div>
+      <div class="grid grid-3">
+        <div class="card review-card">
+          <h3>Ngọc Minh</h3>
+          <p class="muted">“Mua Canva Pro dùng ổn, hỗ trợ nhanh, giá mềm hơn khá nhiều so với mua lẻ.”</p>
+        </div>
+        <div class="card review-card">
+          <h3>Khánh Ly</h3>
+          <p class="muted">“Combo Netflix + Spotify rất tiện, thanh toán xong được hỗ trợ ngay.”</p>
+        </div>
+        <div class="card review-card">
+          <h3>Tuấn Anh</h3>
+          <p class="muted">“ChatGPT Plus và CapCut Pro dùng ổn cho công việc content hằng ngày.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="section-title">
+        <h2>FAQ</h2>
+        <span class="muted">Giải đáp nhanh các câu hỏi thường gặp</span>
+      </div>
+      <div class="faq-list">
+        <div class="card faq-item">
+          <h3>Mua xong bao lâu nhận được tài khoản?</h3>
+          <p class="muted">Tùy sản phẩm, có thể nhận gần như ngay hoặc được hỗ trợ thủ công trong thời gian ngắn.</p>
+        </div>
+        <div class="card faq-item">
+          <h3>Có bảo hành không?</h3>
+          <p class="muted">Có. Mỗi sản phẩm sẽ có chính sách bảo hành riêng theo thời hạn hoặc theo điều kiện sử dụng.</p>
+        </div>
+        <div class="card faq-item">
+          <h3>Có hỗ trợ khi đăng nhập lỗi không?</h3>
+          <p class="muted">Có hỗ trợ kiểm tra và xử lý nếu lỗi thuộc phạm vi bảo hành của sản phẩm.</p>
+        </div>
+        <div class="card faq-item">
+          <h3>Có thể mua số lượng lớn không?</h3>
+          <p class="muted">Có thể thiết kế gói riêng cho đại lý, cộng tác viên hoặc team sử dụng số lượng nhiều.</p>
+        </div>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Tiệm Nhà Bông</h4>
+        <p>Website bảng giá tài khoản premium với giao diện hiện đại, sạch, rõ sản phẩm và tối ưu bán hàng.</p>
+      </div>
+      <div>
+        <h4>Danh mục nổi bật</h4>
+        <p>Netflix Premium</p>
+        <p>Spotify Premium</p>
+        <p>Canva Pro</p>
+        <p>ChatGPT Plus</p>
+      </div>
+      <div>
+        <h4>Thông tin</h4>
+        <p>Chính sách bảo hành</p>
+        <p>Hướng dẫn mua hàng</p>
+        <p>Câu hỏi thường gặp</p>
+        <p>Liên hệ hỗ trợ</p>
+      </div>
+      <div>
+        <h4>Kết nối</h4>
+        <p>Email: support@premiumhub.vn</p>
+        <p>Hotline: 0123 456 789</p>
+        <p>Telegram / Zalo hỗ trợ nhanh</p>
+        <p>Địa chỉ: Hà Nội / TP.HCM</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+    const searchableItems = document.querySelectorAll('.searchable-item');
+    const searchEmptyState = document.getElementById('searchEmptyState');
+    const searchKeyword = document.getElementById('searchKeyword');
+    const pricingSection = document.getElementById('pricing');
+
+    function normalizeText(text) {
+      return text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '')
+        .replace(/đ/g, 'd')
+        .trim();
+    }
+
+    function runSearch() {
+      const keyword = normalizeText(searchInput.value);
+      let matchCount = 0;
+
+      searchableItems.forEach((item) => {
+        item.classList.remove('search-highlight', 'hidden-by-search');
+
+        if (!keyword) {
+          return;
+        }
+
+        const itemText = normalizeText((item.dataset.search || '') + ' ' + item.textContent);
+        const matched = itemText.includes(keyword);
+
+        if (matched) {
+          item.classList.add('search-highlight');
+          matchCount++;
+        } else {
+          item.classList.add('hidden-by-search');
+        }
+      });
+
+      if (!keyword) {
+        searchEmptyState.style.display = 'none';
+        return;
+      }
+
+      if (matchCount > 0) {
+        searchEmptyState.style.display = 'none';
+        pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        searchKeyword.textContent = searchInput.value.trim();
+        searchEmptyState.style.display = 'block';
+        pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    searchButton.addEventListener('click', runSearch);
+    searchInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        runSearch();
+      }
+    });
+
+    searchInput.addEventListener('input', () => {
+      if (!searchInput.value.trim()) {
+        searchableItems.forEach((item) => {
+          item.classList.remove('search-highlight', 'hidden-by-search');
+        });
+        searchEmptyState.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
